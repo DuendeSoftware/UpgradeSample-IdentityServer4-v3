@@ -25,83 +25,85 @@ namespace IdentityServerMigrationSample
                 config.Database.Migrate();
 
                 // this populates an IS4 v3 DB with test data to migrate
-                //if (!grants.DeviceFlowCodes.Any())
-                //{
-                //    grants.DeviceFlowCodes.Add(new IdentityServer4.EntityFramework.Entities.DeviceFlowCodes
-                //    {
-                //        DeviceCode = "device",
-                //        UserCode = "user",
-                //        CreationTime = DateTime.UtcNow,
-                //        Expiration = DateTime.UtcNow.AddMinutes(1),
-                //        ClientId = "client",
-                //        SubjectId = "sub",
-                //        Data = "data",
-                //    });
-                //}
+#if false
+                if (!grants.DeviceFlowCodes.Any())
+                {
+                    grants.DeviceFlowCodes.Add(new IdentityServer4.EntityFramework.Entities.DeviceFlowCodes
+                    {
+                        DeviceCode = "device",
+                        UserCode = "user",
+                        CreationTime = DateTime.UtcNow,
+                        Expiration = DateTime.UtcNow.AddMinutes(1),
+                        ClientId = "client",
+                        SubjectId = "sub",
+                        Data = "data",
+                    });
+                }
 
-                //if (!grants.PersistedGrants.Any())
-                //{
-                //    grants.PersistedGrants.Add(new IdentityServer4.EntityFramework.Entities.PersistedGrant()
-                //    {
-                //        Key = "key",
-                //        CreationTime = DateTime.UtcNow,
-                //        ClientId = "client",
-                //        SubjectId = "sub",
-                //        Type = "type",
-                //        Data = "data",
-                //    });
-                //}
-                //grants.SaveChanges();
+                if (!grants.PersistedGrants.Any())
+                {
+                    grants.PersistedGrants.Add(new IdentityServer4.EntityFramework.Entities.PersistedGrant()
+                    {
+                        Key = "key",
+                        CreationTime = DateTime.UtcNow,
+                        ClientId = "client",
+                        SubjectId = "sub",
+                        Type = "type",
+                        Data = "data",
+                    });
+                }
+                grants.SaveChanges();
 
 
-                //if (!config.Clients.Any())
-                //{
-                //    config.Clients.Add(new Client
-                //    {
-                //        ClientId = "client",
-                //        AllowedGrantTypes = GrantTypes.Code,
-                //        ClientSecrets = { new Secret("secret") },
-                //        RedirectUris = { "https://sample" },
-                //        PostLogoutRedirectUris = { "https://sample" },
-                //        AllowedCorsOrigins = { "https://sample" },
-                //        AllowedScopes = { "openid", "custom", "scope" },
-                //        Properties = { { "prop", "client" } },
-                //        Claims = { new Claim("claim", "client") },
-                //        IdentityProviderRestrictions = { "idp" }
-                //    }.ToEntity());
-                //}
+                if (!config.Clients.Any())
+                {
+                    config.Clients.Add(new Client
+                    {
+                        ClientId = "client",
+                        AllowedGrantTypes = GrantTypes.Code,
+                        ClientSecrets = { new Secret("secret") },
+                        RedirectUris = { "https://sample" },
+                        PostLogoutRedirectUris = { "https://sample" },
+                        AllowedCorsOrigins = { "https://sample" },
+                        AllowedScopes = { "openid", "custom", "scope" },
+                        Properties = { { "prop", "client" } },
+                        Claims = { new Claim("claim", "client") },
+                        IdentityProviderRestrictions = { "idp" }
+                    }.ToEntity());
+                }
 
-                //if (!config.IdentityResources.Any())
-                //{
-                //    config.IdentityResources.Add(new IdentityResources.OpenId().ToEntity());
-                //    config.IdentityResources.Add(new IdentityResource
-                //    { 
-                //        Name = "custom",
-                //        UserClaims = { "foo" },
-                //        Properties = { { "prop", "client" } }
-                //    }.ToEntity());
-                //}
+                if (!config.IdentityResources.Any())
+                {
+                    config.IdentityResources.Add(new IdentityResources.OpenId().ToEntity());
+                    config.IdentityResources.Add(new IdentityResource
+                    { 
+                        Name = "custom",
+                        UserClaims = { "foo" },
+                        Properties = { { "prop", "client" } }
+                    }.ToEntity());
+                }
 
-                //if (!config.ApiResources.Any())
-                //{
-                //    config.ApiResources.Add(new ApiResource
-                //    {
-                //        Name = "api",
-                //        DisplayName = "Api Name",
-                //        UserClaims = { "name" },
-                //        Scopes =
-                //        {
-                //            new Scope("scope")
-                //            {
-                //                UserClaims = { "email" },
-                //            }
-                //        },
-                //        ApiSecrets = { new Secret("xoxo") },
-                //        Properties = { { "prop", "api" } }
-                //    }.ToEntity());
-                //}
+                if (!config.ApiResources.Any())
+                {
+                    config.ApiResources.Add(new ApiResource
+                    {
+                        Name = "api",
+                        DisplayName = "Api Name",
+                        UserClaims = { "name" },
+                        Scopes =
+                        {
+                            new Scope("scope")
+                            {
+                                UserClaims = { "email" },
+                            }
+                        },
+                        ApiSecrets = { new Secret("xoxo") },
+                        Properties = { { "prop", "api" } }
+                    }.ToEntity());
+                }
 
-                //config.SaveChanges();
+                config.SaveChanges();
+#endif
             }
         }
 

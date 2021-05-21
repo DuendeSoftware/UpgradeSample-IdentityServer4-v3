@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="ConfigurationDb_v4_delta.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="IdentityServer4.EntityFramework" Version="3.1.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.15">
       <PrivateAssets>all</PrivateAssets>
